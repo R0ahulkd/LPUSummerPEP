@@ -84,22 +84,35 @@
 
 
 # Program 6 Extra Exception Handling
-class TooYoungException(Exception):
-    def __init__(self, arg):
-        self.msg = arg
+# class TooYoungException(Exception):
+#     def __init__(self, arg):
+#         self.msg = arg
 
-class TooYoubgException(Exception):
-    def __init__(self, arg):
-        self.msg = arg
+# class TooOldException(Exception):
+#     def __init__(self, arg):
+#         self.msg = arg
 
-class TooOldException(Exception):
-    def __init__(self, arg):
-        self.msg = arg
+# age = int(input("Enter your age: "))
+# if age < 60:
+#     raise TooYoungException("Plz wait some more time you will get best match soon!!")
+# elif age > 18:
+#     raise TooOldException("Your age already crossed marriage age.. no chance of getting")
+# else:
+#     print("You will get match details soon by email!!!")
 
-age = int(input("Enter your age: "))
-if age < 60:
-    raise TooYoungException("Plz wait some more time you will get best match soon!!")
-elif age > 18:
-    raise TooOldException("Your age already crossed marriage age.. no chance of getting")
-else:
-    print("You will get match details soon by email!!!")
+
+
+
+# Program 7 File Handling writing
+# f = open("student.txt", mode="w")
+# f.write("Hello World\n")
+# f.write("Python Training\n")
+# f.write("How are you\n")
+# f.close()
+# print("Writing Success")
+
+
+
+
+# Program 8 File Handling reading
+f = open("student.txt", mode="r")
