@@ -1,4 +1,4 @@
-# Methods class,Objects and Inhertitance in Python
+# Methods class,Objects and Inhertitance
 # Program to demonstrate class and methods in Python
 # class Test(object):
 #     def __init__(self):
