@@ -30,17 +30,76 @@
 
 
 # Program 3 Try Except Else
-a = 10
-b = 5
-try:
-    d = a / b
-    print(d)
-    print("Inside try")
+# a = 10
+# b = 5
+# try:
+#     d = a / b
+#     print(d)
+#     print("Inside try")
 
-except ZeroDivisionError:
-    print("Division by zero is not allowed")
+# except ZeroDivisionError:
+#     print("Division by zero is not allowed")
 
+# else:
+#     print("Inside else")
+
+# print("Rest of the code")
+
+
+
+# Program 4 Try Except Finally
+# a = 10
+# b = 0
+# try:
+#     d = a / b
+#     print(d)
+#     print("Inside try")
+
+# except ZeroDivisionError:
+#     print("Division by zero is not allowed")
+
+# else:
+#     print("Inside else")
+
+# finally:
+#     print("Inside finally")
+
+# print("Rest of the code")
+
+
+
+# Program 5 Except Multiple Exceptions
+# a = 10
+# b = 0
+# try:
+#     d = a / b
+#     print(d)
+
+# except (NameError, ZeroDivisionError) as obj:
+#     print(obj)
+
+# print("Rest of the Code")
+
+
+
+
+# Program 6 Extra Exception Handling
+class TooYoungException(Exception):
+    def __init__(self, arg):
+        self.msg = arg
+
+class TooYoubgException(Exception):
+    def __init__(self, arg):
+        self.msg = arg
+
+class TooOldException(Exception):
+    def __init__(self, arg):
+        self.msg = arg
+
+age = int(input("Enter your age: "))
+if age < 60:
+    raise TooYoungException("Plz wait some more time you will get best match soon!!")
+elif age > 18:
+    raise TooOldException("Your age already crossed marriage age.. no chance of getting")
 else:
-    print("Inside else")
-
-print("Rest of the code")
+    print("You will get match details soon by email!!!")
