@@ -136,7 +136,7 @@
 
 
 
-# Program 10 File Handling with Inheritance
+# Program 10 File Handling with Inheritance with a class Person, Employee, and FileOperations
 class Person:
     def __init__(self):
         self.name = ""
