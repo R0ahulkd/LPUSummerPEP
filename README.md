@@ -8,6 +8,7 @@ Organized by: School of Computer Application, LPU
 Focus: Placement-oriented training for core Python and real-world programming problems
 
 📚 Topics Covered:
+
 ✅ Python Basics (Variables, Data Types, Operators)
 
 ✅ Conditional Statements & Loops
