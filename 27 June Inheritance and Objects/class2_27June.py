@@ -1,46 +1,46 @@
-# Methods class,Objects and Inhertitance
-# Program to demonstrate class and methods in Python
-# class Test(object):
-#     def __init__(self):
-#         print("Constructor called")
+Methods class,Objects and Inhertitance
+Program to demonstrate class and methods in Python
+class Test(object):
+    def __init__(self):
+        print("Constructor called")
     
-#     def m1(self):
-#         print("Hello World")
+    def m1(self):
+        print("Hello World")
 
-# x = Test()
-# x.m1()
+x = Test()
+x.m1()
 
 
 
-# Program to demonstrate class and methods
-# class Test(object):
-#     def __init__(self):
-#         print("Constructor called")
+Program to demonstrate class and methods
+class Test(object):
+    def __init__(self):
+        print("Constructor called")
 
-#     def deposit(self):
-#         print("Deposit method called")
+    def deposit(self):
+        print("Deposit method called")
     
-#     def withdraw(self):
-#         print("Withdraw method called")
+    def withdraw(self):
+        print("Withdraw method called")
 
-# x = Test()
-# x.deposit()
-# x.withdraw()
+x = Test()
+x.deposit()
+x.withdraw()
 
 
 
-# Program to demonstrate Single level Inheritance in Python
-# class Father: # Parent Class
-#     def show(self):
-#         print("Parent Class Instance method")
+Program to demonstrate Single level Inheritance in Python
+class Father: # Parent Class
+    def show(self):
+        print("Parent Class Instance method")
     
-# class Son(Father): # Child Class (inherits from Father)
-#     def display(self):
-#         print("Child Class Instance method")
+class Son(Father): # Child Class (inherits from Father)
+    def display(self):
+        print("Child Class Instance method")
 
-# s = Son()
-# s.display()
-# s.show()
+s = Son()
+s.display()
+s.show()
 
 
 
