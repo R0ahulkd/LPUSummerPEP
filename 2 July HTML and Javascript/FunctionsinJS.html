@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+</head>
+<body>
+    <script>
+        function getGrade(marks) {
+            if (marks >= 90) {
+                return "A";
+            } else if (marks >= 80) {
+                return "B";
+            } else if (marks >= 70) {
+                return "C";
+            } else if (marks >= 60) {
+                return "D";
+            } else {
+                return "F";
+            }
+        }
+
+        var marks = prompt("Please enter your marks:");
+        document.write("You have received an " + getGrade(marks) + " grade.");
+    </script>
+</body>
+</html>
