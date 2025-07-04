@@ -1,8 +1,225 @@
-<h2>Edit Student</h2>
-<form method="POST">
-    {% csrf_token %}
-    Name: <input type="text" name="name" value="{{ student.name }}">
-    Age: <input type="number" name="age" value="{{ student.age }}">
-    Course: <input type="text" name="course" value="{{ student.course }}">
-    <button type="submit">Update</button>
-</form>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student | Student Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4895ef;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+            --danger: #f72585;
+            --warning: #f8961e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            color: var(--dark);
+        }
+        
+        .edit-container {
+            max-width: 600px;
+            width: 100%;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            animation: fadeInUp 0.5s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .edit-header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+        
+        .edit-header h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .edit-form {
+            padding: 2rem;
+        }
+        
+        .form-row {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-row label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .form-row input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-row input:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .update-btn, .cancel-btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        
+        .update-btn {
+            background-color: var(--success);
+            color: white;
+            border: none;
+        }
+        
+        .update-btn:hover {
+            background-color: #3aa8d8;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 201, 240, 0.3);
+        }
+        
+        .cancel-btn {
+            background-color: transparent;
+            color: var(--danger);
+            border: 2px solid var(--danger);
+        }
+        
+        .cancel-btn:hover {
+            background-color: rgba(247, 37, 133, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .back-link:hover {
+            color: var(--secondary);
+            transform: translateX(-5px);
+        }
+        
+        .back-link i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="edit-container">
+        <div class="edit-header">
+            <h2><i class="fas fa-user-edit"></i> Edit Student</h2>
+        </div>
+        
+        <form method="POST" class="edit-form" id="editForm">
+            {% csrf_token %}
+            <div class="form-row">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" value="{{ student.name }}" required>
+            </div>
+            
+            <div class="form-row">
+                <label for="age">Age</label>
+                <input type="number" name="age" id="age" value="{{ student.age }}" required>
+            </div>
+            
+            <div class="form-row">
+                <label for="course">Course</label>
+                <input type="text" name="course" id="course" value="{{ student.course }}" required>
+            </div>
+            
+            <div class="form-actions">
+                <a href="{% url 'student_list' %}" class="cancel-btn"><i class="fas fa-times"></i> Cancel</a>
+                <button type="submit" class="update-btn"><i class="fas fa-save"></i> Update</button>
+            </div>
+        </form>
+        
+        <a href="{% url 'student_list' %}" class="back-link"><i class="fas fa-arrow-left"></i> Back to Student List</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('editForm');
+            if (form) {
+                const updateBtn = form.querySelector('button[type="submit"]');
+                
+                form.addEventListener('submit', function() {
+                    updateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Updating...';
+                    updateBtn.disabled = true;
+                });
+            }
+            
+            // Add animation to form elements
+            const formRows = document.querySelectorAll('.form-row');
+            formRows.forEach((row, index) => {
+                row.style.opacity = '0';
+                row.style.transform = 'translateX(-20px)';
+                row.style.animation = `fadeInRight 0.5s ease-out ${index * 0.1 + 0.3}s forwards`;
+            });
+            
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeInRight {
+                    from { opacity: 0; transform: translateX(-20px); }
+                    to { opacity: 1; transform: translateX(0); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
