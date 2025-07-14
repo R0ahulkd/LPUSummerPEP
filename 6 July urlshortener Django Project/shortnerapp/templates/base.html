@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -529,7 +530,7 @@
                         <i class="fas fa-user"></i>
                     </div>
                     <span class="username">{{ user.username }}</span>
-                    <button class="logout-btn" onclick="window.location.href='{% url 'logout' %}'">
+                    <button class="logout-btn" onclick="window.location.href='{% url 'logout' %}' ;">
                         <i class="fas fa-sign-out-alt"></i>
                     </button>
                 </div>
@@ -553,10 +554,8 @@
                 <h3>About Shortly</h3>
                 <p>The fastest and most reliable URL shortening service. Create short, memorable links and track their performance with advanced analytics.</p>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/Naseem7888" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/naseem7888/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
             <div class="footer-section">
@@ -572,8 +571,8 @@
             <div class="footer-section">
                 <h3>Contact Us</h3>
                 <p><i class="fas fa-envelope"></i> contact@shortly.com</p>
-                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Silicon Valley</p>
+                <p><i class="fas fa-phone"></i> +91 123 456 7890</p>
+                <p><i class="fas fa-map-marker-alt"></i> 38 Block 605</p>
             </div>
         </div>
         <div class="copyright">
